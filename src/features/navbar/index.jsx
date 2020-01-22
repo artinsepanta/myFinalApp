@@ -37,6 +37,10 @@ export default function Navbar(props) {
           <NavLink exact t={true} to='/' style={{ textDecoration: 'none', color: 'white' }}>
             <Button color="inherit">Home</Button>
           </NavLink>
+
+          <NavLink exact t={true} to='/service-report/new' style={{ textDecoration: 'none', color: 'white' }}>
+            <Button color="inherit">New</Button>
+          </NavLink>
         </Toolbar>
       </AppBar>
     </div>
