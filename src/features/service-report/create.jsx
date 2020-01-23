@@ -4,11 +4,19 @@ import { connect } from 'react-redux'
 import { createSerReport } from '../../api/service-report'
 import SerReportForm from './form'
 
+function submitForm(values, props) {
+  const { persistSerReport} = props
+  createSerReport(values).then(json => {
+    persistSerReport({ser: json})
+    props.history.push(`/service-report/${json.id}`)
+  })
+}
+
 function CreateSerReport (props) {
   return <div>
     <h1>Create Dera Charity Service Report</h1>
 
-    <SerReportForm/>
+    <SerReportForm onSubmit ={values => submitForm(values, props)}/>
   </div>
 }
 
@@ -19,7 +27,9 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return {}
+  return {
+    persistSerReport: payload => dispatch ({type: 'LOAD', payload})
+  }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CreateSerReport)

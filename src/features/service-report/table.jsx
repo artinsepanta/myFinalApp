@@ -2,14 +2,14 @@ import React from 'react'
 
 function renderNone(loaded) {
   return <tr>
-            <td colSpan={2}>
-              {
-                loaded
-                  ? "There are no service report to display"
-                  : "loading..."
-              }
-            </td>
-          </tr>
+      <td colSpan={2}>
+        {
+          loaded
+            ? "There are no service report to display"
+            : "loading..."
+        }
+      </td>
+    </tr>
 }
 
 function renderService(service) {
@@ -30,7 +30,7 @@ export default function SerReportTable({service, loaded}) {
 
     <tbody>
       {
-        service.length > 0 ? renderService(service): renderNone(loaded)
+        service && service.length > 0 ? renderService(service): renderNone(loaded)
       }
     </tbody>
   </table>

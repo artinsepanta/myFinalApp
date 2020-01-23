@@ -58,4 +58,4 @@ function SerReportForm(props) {
 const withForm = reduxForm({ form: 'serReport', validate})(SerReportForm)
 const withRedux = connect()(withForm)
 
-export default(withRedux) 
+export default withRouter(withRedux) 

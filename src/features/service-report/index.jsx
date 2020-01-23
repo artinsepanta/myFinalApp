@@ -8,7 +8,7 @@ import SerReportTable from './table'
 class ServiceReport extends React.Component {
 
   componentDidMount() {
-    const{persistServiceReport} = this.props
+    const{ persistServiceReport } = this.props
     getServiceReport().then(json =>persistServiceReport({ service: json, loaded: true }))
   }
   render () {
