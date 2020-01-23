@@ -1,13 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { updateSerReport } from '../../api/service-report'
+import { updateSerReport, getSerReport } from '../../api/service-report'
 import SerReportForm from './form'
 
 
 class EditSerReport extends React.Component {
   componentDidMount() {
-    const { id } = this.props.match.props
+    const { id } = this.props.match.params
     const { persistSerReport } = this.props
     getSerReport(id).then(json =>{
       persistSerReport({ser:json, loaded:true})

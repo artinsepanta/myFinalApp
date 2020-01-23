@@ -2,12 +2,12 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-import { getSerReport} from '../../api/service-report'
+import { getSerReport, deleteSerReport} from '../../api/service-report'
 
 
 class ShowSerReport extends React.Component {
   componentDidMount() {
-    const { id } = this.props.match.props
+    const { id } = this.props.match.params
     const { persistSerReport } = this.props
     getSerReport(id).then(json =>{
       persistSerReport({ser:json, loaded:true})
@@ -21,7 +21,7 @@ class ShowSerReport extends React.Component {
       <div>
         <Link to={`/service-report/${id}/edit`}>Edit</Link>
         | 
-        <a herf= '#delete' onClick ={() => {
+        <a herf='#delete' onClick ={() => {
           if(window.confirm(`Are you sure you want to delete service report(${id})?`)) {
             deleteSerReport(id)
             history.push('/')

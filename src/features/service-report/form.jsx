@@ -14,7 +14,7 @@ function validate(values) {
   return errors
 }
 
-function renderInput({input, lable,type,meta:{touched,error}}) {
+function renderInput({input, lable, type, meta:{touched,error}}) {
   return <div>
     <lable>{lable}{touched && ((error && <span className='error'>{error}</span>))}</lable>
     <div>

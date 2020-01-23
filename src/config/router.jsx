@@ -6,7 +6,7 @@ import CreateSerReport from'../features/service-report/create'
 import ShowSerReport from'../features/service-report/show'
 import EditSerReport from'../features/service-report/edit'
 
-export default function Router () {
+export default function Router() {
  return <Switch>
           <Route exact path='/'component={ServiceReport}/>
           <Route exact path='/service-report/new'component={CreateSerReport}/>

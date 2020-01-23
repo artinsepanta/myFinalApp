@@ -6,13 +6,17 @@ import {getServiceReport} from '../../api/service-report'
 import SerReportTable from './table'
 
 class ServiceReport extends React.Component {
+  // state = {
+  //   service : [],
+  //   loaded : false
+  // }
 
   componentDidMount() {
     const{ persistServiceReport } = this.props
     getServiceReport().then(json =>persistServiceReport({service: json, loaded: true }))
   }
   render () {
-    const { service, loaded,history } =this.props
+    const { service, loaded, history } =this.props
     return <div>
        <h1>The Service Type Report</h1>
        <SerReportTable service = {service} loaded ={loaded} history={history} />  
@@ -22,7 +26,7 @@ class ServiceReport extends React.Component {
 function mapStateToProps(state) {
   return {
     service: state.serviceReport.service,
-    loaded: state.serviceReport.loaded
+    loaded: state.serviceReport.loaded,
   }
 }
 

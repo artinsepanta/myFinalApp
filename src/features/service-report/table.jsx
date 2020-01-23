@@ -2,14 +2,14 @@ import React from 'react'
 
 function renderNone(loaded) {
   return <tr>
-      <td colSpan={2}>
+      <td colSpan={2}>   {/*does not work */}
         {
           loaded
             ? "There are no service report to display"
             : "loading..."
         }
       </td>
-          </tr>
+    </tr>
 }
 
 function renderService(service, history) {
