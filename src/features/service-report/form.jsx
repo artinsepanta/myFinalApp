@@ -56,6 +56,8 @@ function SerReportForm(props) {
 }
 
 const withForm = reduxForm({ form: 'serReport', validate})(SerReportForm)
-const withRedux = connect()(withForm)
+const withRedux = connect(state=>({
+  initialValues: state.serviceReport.ser,
+}))(withForm)
 
 export default withRouter(withRedux) 

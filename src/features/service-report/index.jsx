@@ -9,13 +9,13 @@ class ServiceReport extends React.Component {
 
   componentDidMount() {
     const{ persistServiceReport } = this.props
-    getServiceReport().then(json =>persistServiceReport({ service: json, loaded: true }))
+    getServiceReport().then(json =>persistServiceReport({service: json, loaded: true }))
   }
   render () {
-    const { service, loaded } =this.props
+    const { service, loaded,history } =this.props
     return <div>
        <h1>The Service Type Report</h1>
-       <SerReportTable service = {service} loaded ={loaded} />  
+       <SerReportTable service = {service} loaded ={loaded} history={history} />  
     </div> 
   }
 }

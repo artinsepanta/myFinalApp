@@ -9,17 +9,21 @@ function renderNone(loaded) {
             : "loading..."
         }
       </td>
-    </tr>
+          </tr>
 }
 
-function renderService(service) {
-  return service.map(ser => <tr cellSpacing={0} key={ser.id}>
+function renderService(service, history) {
+  return service.map(ser => <tr
+   cellSpacing={0} 
+   key={ser.id}
+   onClick={()=>history.push(`/service-report/${ser.id}`)}
+  >
     <td>{ser.no}</td>
     <td>{ser.type}</td>
   </tr>)
 }
 
-export default function SerReportTable({service, loaded}) {
+export default function SerReportTable({service, loaded, history}) {
   return <table width="100%">
     <thead>
       <tr>
@@ -30,7 +34,7 @@ export default function SerReportTable({service, loaded}) {
 
     <tbody>
       {
-        service && service.length > 0 ? renderService(service): renderNone(loaded)
+        service && service.length > 0 ? renderService(service, history): renderNone(loaded)
       }
     </tbody>
   </table>

@@ -1,5 +1,5 @@
 const serviceReportReducer = (state ={
-  service:[],
+  ser:[],
   loaded:false,
 }, action) => {
   switch(action.type) {

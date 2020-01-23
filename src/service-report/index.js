@@ -12,3 +12,11 @@ export function getSerReport (id) {
   return api('get', `service-report/${id}`)
 }
 
+export function updateSerReport (id,values) {
+  return api('put', `service-report/${id}`,{...values})
+}
+
+export function deleteSerReport (id,values) {
+  return api('delete', `service-report/${id}`)
+}
+
