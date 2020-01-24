@@ -1,5 +1,5 @@
-import fetch from 'isomorphic-fetch'
-require('es6-promise').polyfill()
+ import fetch from 'isomorphic-fetch'
+ require('es6-promise').polyfill()
 
 export default function api(method, path, data){
   return fetch(`//localhost:3001/ ${path}`, {
@@ -13,3 +13,4 @@ headers:new Headers ({
 body:JSON.stringify(data)
   }).then(response =>response.json())
 }
+

@@ -12,9 +12,10 @@ function submitForm(values, props) {
   })
 }
 
+
 function CreateSerReport (props) {
   return <div>
-    <h1>Create Dera Charity Service Report</h1>
+    <h1> Dera Charity Service Report</h1>
 
     <SerReportForm onSubmit ={values => submitForm(values, props)}/>
   </div>

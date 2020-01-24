@@ -1,3 +1,4 @@
+
 import api from '../'
 
 export function getServiceReport() {
@@ -19,4 +20,12 @@ export function updateSerReport (id,values) {
 export function deleteSerReport (id,values) {
   return api('delete', `service-report/${id}`)
 }
+
+
+
+
+
+
+
+
 

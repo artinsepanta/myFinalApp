@@ -1,7 +1,7 @@
 import React from "react"
-//import ServiceReport from'./features/service-report'
-import Router from './config/router'
-import Navbar from './features/navbar'
+//import ServiceReport from'./components/service-report'
+import Router from './reduxFile/router'
+import Navbar from './components/navbar'
 
 class App extends React.Component {
   render() {

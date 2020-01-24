@@ -39,3 +39,5 @@ export default function SerReportTable({service, loaded, history}) {
     </tbody>
   </table>
 }
+
+
