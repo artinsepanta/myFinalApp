@@ -18,7 +18,7 @@ export function updateSerReport (id,values) {
 }
 
 export function deleteSerReport (id,values) {
-  return api('delete', `service-report/${id}`)
+  return api('delete', `service-report/${id}`, {...values})
 }
 
 

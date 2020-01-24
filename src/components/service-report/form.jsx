@@ -1,5 +1,5 @@
 import React from 'react'
-//import { connect } from 'react-redux'
+import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import {Field, reduxForm} from 'redux-form'
 
@@ -56,9 +56,9 @@ function SerReportForm(props) {
   </form>
 }
 
-// const withForm = reduxForm({ form: 'serReport', validate})(SerReportForm)
-// const withRedux = connect(state=>({
-//   initialValues: state.serviceReport.ser,
-// }))(withForm)
+const withForm = reduxForm({ form: 'serReport', validate})(SerReportForm)
+const withRedux = connect(state=>({
+  initialValues: state.serviceReport.ser,
+}))(withForm)
 
 export default withRouter(reduxForm({form:'serReport', validate})(SerReportForm)) 

@@ -4,23 +4,22 @@ import { connect } from 'react-redux'
 import { updateSerReport, getSerReport } from '../../api/service-report'
 import SerReportForm from './form'
 
+  class EditSerReport extends React.Component {
+    componentDidMount() {
+      const { id } = this.props.match.params
+      const { persistSerReport } = this.props
+      getSerReport(id).then(json =>{
+        persistSerReport({ser:json, loaded:true})
+      }) 
+    }
 
-class EditSerReport extends React.Component {
-  componentDidMount() {
-    const { id } = this.props.match.params
-    const { persistSerReport } = this.props
-    getSerReport(id).then(json =>{
-      persistSerReport({ser:json, loaded:true})
-    }) 
-  }
-  
-  submitForm(values) {
-    const { persistSerReport, history, ser: { id } } = this.props
-    updateSerReport( id, values).then(json => {
-      persistSerReport({ser: json})
-      history.push(`/service-report/${json.id}`)
-    })
-  }
+    submitForm(values) {
+      const { persistSerReport, history, ser: { id } } = this.props
+      updateSerReport( id, values).then(json => {
+        persistSerReport({ser: json})
+        history.push(`/service-report/${json.id}`)
+      })
+    }
 
   render() {
    return <div>
