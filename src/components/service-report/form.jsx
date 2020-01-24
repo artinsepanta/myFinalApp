@@ -33,7 +33,7 @@ function renderTextArea({input, lable, rows, meta: {touched, error}}) {
 }
 
 function SerReportForm(props) {
-  const { handleSubmit, pristine, submitting, valid} = props
+  const { handleSubmit, submitting, valid} = props
   return <form onSubmit={handleSubmit}>
     <Field name="no" component={renderInput} type="text" lable="No."/>
     <Field name="type" component={renderInput} type="text" lable="Type"/>
@@ -44,12 +44,13 @@ function SerReportForm(props) {
       <button 
         type="submit"
         className="primary"
-        disabled = {!valid ||pristine ||submitting}
+       // disabled = {!valid ||submitting}
+       onClick={() => props.history.push('/')}
       >Save</button>
       <button
         type="button"
         className="secondary"
-        onClick={() => props.history.push('/')}
+       // onClick={() => props.history.push('/')}
       >Cancel</button>
     </div>
   </form>

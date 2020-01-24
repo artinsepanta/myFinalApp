@@ -40,7 +40,7 @@ class ShowSerReport extends React.Component {
         <lable>Description</lable>
         <ol>
           {
-            description.split('\n').map(line => <li>{ line}</li>)
+          // description.split('\n').map(line => <li>{ line}</li>)
           }
         </ol>
       </div>
@@ -48,7 +48,7 @@ class ShowSerReport extends React.Component {
         <lable>Process</lable>
         <ol>
           {
-            process.split('\n').map(line => <li>{ line}</li>)
+            //process.split('\n').map(line => <li>{ line}</li>)
           }
         </ol>
       </div>
