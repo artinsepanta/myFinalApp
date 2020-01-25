@@ -4,7 +4,7 @@ function renderNone(loaded) {
   return <tr>
       <td colSpan={2}>   {/*does not work */}
         {
-          loaded
+          !loaded
             ? "There are no service report to display"
             : "loading..."
         }
@@ -18,7 +18,7 @@ function renderService(service, history) {
    key={ser.id}
    onClick={()=>history.push(`/service-report/${ser.id}`)}
   >
-    <td>{ser.no}</td>
+    <td>{ser.nom}</td>
     <td>{ser.type}</td>
   </tr>)
 }

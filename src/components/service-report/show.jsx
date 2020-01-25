@@ -15,7 +15,7 @@ class ShowSerReport extends React.Component {
   }
 
   renderSer(){
-    const {history,ser:{id, no, type, description, process} } = this.props
+    const {history,ser:{id, nom, type, description, process} } = this.props
     return <div>
       <h1>Dera Service Report</h1>
       <div>
@@ -24,13 +24,13 @@ class ShowSerReport extends React.Component {
         <a herf='#delete' onClick ={() => {
           if(window.confirm(`Are you sure you want to delete service report(${id})?`)) {
             deleteSerReport(id)
-            history.push('/')
+            history.push('/router')
           }
         }}>Delete</a>
       </div>
       <div >
         <strong>NO.</strong> 
-        { no }
+        { nom }
         </div>
       <div >
         <strong>Type</strong>
