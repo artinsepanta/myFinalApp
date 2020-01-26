@@ -25,6 +25,9 @@ import SerReportForm from './form'
    return <div>
        <h1>Edit Service Report</h1>
        <SerReportForm onSubmit ={values => this.submitForm(values)}/>
+       {/* <SerReportForm >
+         <button  onSubmit ={values => this.submitForm(values)}/>
+         </SerReportForm> */}
     </div>
   }
 }

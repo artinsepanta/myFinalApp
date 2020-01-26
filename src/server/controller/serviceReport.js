@@ -1,17 +1,17 @@
-const mysql = require('mysql')
-const pool = require('../sql/connection')
-const { handleSQLError } = require('../sql/error')
+const mysql = require('mysql');
+const pool = require('../sql/connection');
+const { handleSQLError } = require('../sql/error');
 
-const getAllSerReport = (req, res) => {
+const getAllSerreport = (req, res) => {
   console.log('res: ', res);
-  pool.query("SELECT * FROM serReport", (err, rows) => {
+  pool.query("SELECT * FROM serreport", (err, rows) => {
     if (err) return handleSQLError(res, err)
     return res.json(rows);
   })
-}
+};
 
-const getSerReportById = (req, res) => {
-  let sql = "SELECT * FROM serReport WHERE id = ?"
+const getSerreportById = (req, res) => {
+  let sql = "SELECT * FROM serreport WHERE id = ?"
   sql = mysql.format(sql, [ req.params.id ])
 
   pool.query(sql, (err, rows) => {
@@ -20,9 +20,9 @@ const getSerReportById = (req, res) => {
   })
 }
 
-const createSerReport = (req, res) => {
+const createSerreport = (req, res) => {
   const { nom ,types, descriptions, process } = req.body
-  let sql = "INSERT INTO serReport (nom ,types, descriptions, process ) VALUES (?, ?, ?, ?)"
+  let sql = "INSERT INTO serreport (nom ,types, descriptions, process ) VALUES (?, ?, ?, ?)"
   sql = mysql.format(sql, [ nom ,types, descriptions, process  ])
 
   pool.query(sql, (err, results) => {
@@ -31,9 +31,9 @@ const createSerReport = (req, res) => {
   })
 }
 
-const updateSerReportById = (req, res) => {
+const updateSerreportById = (req, res) => {
   const { nom ,types, descriptions, process } = req.body
-  let sql = "UPDATE serReport SET nom = ?, types= ? ,descriptions = ?, process = ? WHERE id = ?"
+  let sql = "UPDATE serreport SET nom = ?, types= ? ,descriptions = ?, process = ? WHERE id = ?"
   sql = mysql.format(sql, [ nom ,types, descriptions, process, req.params.id ])
 
   pool.query(sql, (err, results) => {
@@ -42,20 +42,20 @@ const updateSerReportById = (req, res) => {
   })
 }
 
-const deleteSerReportById = (req, res) => {
-  let sql = "DELETE FROM serReport WHERE ID = ?"
+const deleteSerreportById = (req, res) => {
+  let sql = "DELETE FROM serreport WHERE ID = ?"
   sql = mysql.format(sql, [ req.params.Id ])
 
   pool.query(sql, (err, results) => {
     if (err) return handleSQLError(res, err)
-    return res.json({ message: `Deleted ${results.affectedRows} serReport(s)` });
+    return res.json({ message: `Deleted ${results.affectedRows} serreport(s)` });
   })
 }
 
 module.exports = {
-  getAllSerReport,
-  getSerReportById,
-  createSerReport,
-  updateSerReportById,
-  deleteSerReportById
+  getAllSerreport,
+  getSerreportById,
+  createSerreport,
+  updateSerreportById,
+  deleteSerreportById
 }

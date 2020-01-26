@@ -4,9 +4,9 @@ function renderNone(loaded) {
   return <tr>
       <td colSpan={2}>   {/*does not work */}
         {
-          !loaded
-            ? "There are no service report to display"
-            : "loading..."
+          loaded
+            ? "loading..."
+            : "There are no service report to display"
         }
       </td>
     </tr>
