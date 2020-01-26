@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { createSerReport } from '../../api/service-report'
 import SerReportForm from './SerReportForm'
 
 function submitForm(values, props) {

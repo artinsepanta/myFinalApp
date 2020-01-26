@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { updateSerReport, getSerReport } from '../../api/service-report'
 import SerReportForm from './SerReportForm'
 
   class EditSerReport extends React.Component {

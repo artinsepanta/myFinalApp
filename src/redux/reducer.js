@@ -1,14 +1,10 @@
-const serviceReportReducer = (state ={
-  service:[],
-  loaded:false,
-}, action) => {
+const serviceReportsReducer = (state = [], action) => {
   switch(action.type) {
     case 'LOAD':
       return action.payload
-
-      default:
-        return state
+    default:
+      return state
   }
 }
 
-export default serviceReportReducer
+export default serviceReportsReducer;

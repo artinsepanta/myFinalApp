@@ -1,8 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import {getServiceReport} from '../../api/service-report'
-
 import SerReportTable from './table'
 
 class ServiceReport extends React.Component {

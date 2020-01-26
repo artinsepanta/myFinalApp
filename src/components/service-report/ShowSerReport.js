@@ -2,9 +2,6 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-import { getSerReport, deleteSerReport} from '../../api/service-report'
-
-
 class ShowSerReport extends React.Component {
   componentDidMount() {
     const { id } = this.props.match.params
