@@ -1,7 +1,7 @@
 import { createStore, combineReducers } from 'redux'
 import { reducer as formReducer } from 'redux-form'
 
-import serviceReportReducer from '../components/service-report/reducer'
+import serviceReportReducer from './reducer'
 
 const rootReducer = combineReducers({
   form: formReducer,

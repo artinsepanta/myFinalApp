@@ -1,6 +1,6 @@
 import React from "react"
 //import ServiceReport from'./components/service-report'
-import Router from './reduxFile/router'
+import Router from './components/router'
 import Navbar from './components/navbar'
 
 class App extends React.Component {

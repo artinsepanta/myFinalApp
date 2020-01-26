@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import { createSerReport } from '../../api/service-report'
-import SerReportForm from './form'
+import SerReportForm from './SerReportForm'
 
 function submitForm(values, props) {
   const { persistSerReport} = props
@@ -33,5 +33,3 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CreateSerReport)
-
-

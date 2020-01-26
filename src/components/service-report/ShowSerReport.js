@@ -14,8 +14,8 @@ class ShowSerReport extends React.Component {
     }) 
   }
 
-  renderSer(){
-    const {history,ser:{id, nom, type, description, process} } = this.props
+  renderSer = () => {
+    const {history, ser:{id, nom, type, description, process} } = this.props
     return <div>
       <h1>Dera Service Report</h1>
       <div>
@@ -55,12 +55,10 @@ class ShowSerReport extends React.Component {
     </div>
   }
 
-  render(){
+  render() {
     const{ loaded, ser } = this.props
     return loaded && ser
       ? this.renderSer() : "loading..."
-
-    
   }
 }
 

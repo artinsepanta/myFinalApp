@@ -45,7 +45,7 @@ function SerReportForm(props) {
         type="submit"
         className="primary"
         disabled = {!valid || submitting}
-       onClick={() => props.history.push('../router/home')} //ask about tout
+       onClick={() => props.history.push('/')} //ask about tout
       >Save</button>
       <button
         type="button"
