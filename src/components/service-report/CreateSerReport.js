@@ -5,7 +5,7 @@ import { createSerReport } from '../../api/service-report'
 import SerReportForm from './SerReportForm'
 
 function submitForm(values, props) {
-  const { persistSerReport} = props
+  const { persistSerReport } = props
     createSerReport(values).then(json => {
     persistSerReport({ser: json})
     props.history.push(`/service-report/${json.id}`)

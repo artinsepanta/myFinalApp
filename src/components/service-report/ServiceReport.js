@@ -6,10 +6,10 @@ import {getServiceReport} from '../../api/service-report'
 import SerReportTable from './table'
 
 class ServiceReport extends React.Component {
-  // state = {
-  //   service : [],
-  //   loaded : false
-  // }
+  state = {
+    service : [],
+    loaded : false
+  }
 
   componentDidMount() {
     const{ persistServiceReport } = this.props

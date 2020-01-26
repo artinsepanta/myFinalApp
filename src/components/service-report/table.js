@@ -40,4 +40,3 @@ export default function SerReportTable({service, loaded, history}) {
   </table>
 }
 
-

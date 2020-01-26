@@ -8,16 +8,16 @@ const serviceReportRouters = require('./routers/serviceReport');
 const app = express();
 const port = process.env.PORT || 4001;
 
-app.use(cors());  //adding after geting help from youtube
-app.use(bodyParser.json());
+// app.use(cors());  //adding after geting help from youtube
+// app.use(bodyParser.json());
 
-app.use('/serviceReport', serviceReportRouters);
+// app.use('/serviceReport', serviceReportRouters);
 
-app.use(express.static('public'));
+// app.use(express.static('public'));
   
-app.get('/', (req, res) => {
-   res.send('Welcome to our server!') 
-});
+// app.get('/', (req, res) => {
+//    res.send('Welcome to our server!') 
+// });
 // app.post('/api/post',verifyToken,(req,res)=>{
 //   jwt.verify(req.token,'secretkey',(err,authData)=> {
 //     if(err) {
