@@ -1,10 +1,10 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 
-import ServiceReport from './service-report/ServiceReport'
-import CreateSerReport from'./service-report/CreateSerReport'
-import ShowSerReport from'./service-report/ShowSerReport'
-import EditSerReport from'./service-report/EditServiceReport'
+import ServiceReport from '.'
+import CreateSerReport from'./Create'
+import ShowSerReport from'./Show'
+import EditSerReport from'./Edit'
 
 export default function Router() {
  return <Switch>

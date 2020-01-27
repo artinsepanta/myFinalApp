@@ -1,14 +1,16 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { getSerReport, deleteSerReport} from '../../api/service-report'
+
 
 class ShowSerReport extends React.Component {
   componentDidMount() {
     const { id } = this.props.match.params
     const { persistSerReport } = this.props
     getSerReport(id).then(json =>{
-      persistSerReport({ser:json, loaded:true})
-    }) 
+     persistSerReport({ser:json, loaded:true})
+   }) 
   }
 
   renderSer = () => {
@@ -20,7 +22,7 @@ class ShowSerReport extends React.Component {
         | 
         <a herf='#delete' onClick ={() => {
           if(window.confirm(`Are you sure you want to delete service report(${id})?`)) {
-            deleteSerReport(id)
+            // deleteSerReport(id)
             history.push('/router')
           }
         }}>Delete</a>

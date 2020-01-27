@@ -1,11 +1,10 @@
 import { createStore, combineReducers } from 'redux'
-// import { reducer as formReducer } from 'redux-form';
-import state from './state';
-
-import serviceReportReducer from './reducer'
+ import { reducer as formReducer } from 'redux-form';
+import state from '../../redux/state';
+import serviceReportsReducer from '../../redux/reducers/serviceReportsReducer';
 
 const rootReducer = combineReducers({
-  // form: formReducer,
+   form: formReducer,
   serviceReports: serviceReportsReducer,
 })
 

@@ -5,7 +5,7 @@ import {Field, reduxForm} from 'redux-form'
 
 function validate(values) {
   const errors ={}
-  //const{ nom, type, description, process } = values
+  const{ nom, type, description, process } = values
   if(!values.nom) errors.nom = "required"
   if(!values.type) errors.type = "required"
   if(!values.description) errors.description = "required"
@@ -14,20 +14,20 @@ function validate(values) {
   return errors
 }
 
-function renderInput({input, lable, type, meta:{touched,error}}) {
+function renderInput({input, label, type, meta:{touched,error}}) {
   return <div>
-    <lable>{lable}{touched && ((error && <span className='error'>({error})</span>))}</lable>
+    <label>{label}{touched && ((error && <span className='error'>({error})</span>))}</label>
     <div>
-      <input {...input } placeholder={lable} type={type}/>
+      <input {...input } placeholder={label} type={type}/>
     </div>
   </div>
 }
 
-function renderTextArea({input, lable, rows, meta: {touched, error}}) {
+function renderTextArea({input, label, rows, meta: {touched, error}}) {
   return <div>
-    <lable>{lable}{touched && ((error && <span className='error'>{error}</span>))}</lable>
+    <label>{label}{touched && ((error && <span className='error'>{error}</span>))}</label>
     <div>
-      <textarea {...input } placeholder={lable} rows={rows}/>
+      <textarea {...input } placeholder={label} rows={rows}/>
     </div>
   </div>
 }
@@ -35,17 +35,17 @@ function renderTextArea({input, lable, rows, meta: {touched, error}}) {
 function SerReportForm(props) {
   const { handleSubmit, submitting, valid} = props
   return <form onSubmit={handleSubmit}>
-    <Field name="nom" component={renderInput} type="text" lable="No."/>
-    <Field name="type" component={renderInput} type="text" lable="Type"/>
-    <Field name="description" component={renderTextArea} rows= {10} lable="Description"/>
-    <Field name="process" component={renderTextArea} rows= {10} lable="Process"/>
+    <Field name="nom" component={renderInput} type="text" label="No."/>
+    <Field name="type" component={renderInput} type="text" label="Type"/>
+    <Field name="description" component={renderTextArea} rows= {10} label="Description"/>
+    <Field name="process" component={renderTextArea} rows= {10} label="Process"/>
    
     <div>
       <button 
         type="submit"
         className="primary"
         disabled = {!valid || submitting}
-       onClick={() => props.history.push('/')} //ask about tout
+       onClick={() => props.history.push('/')} //index page ask about tout
       >Save</button>
       <button
         type="button"
