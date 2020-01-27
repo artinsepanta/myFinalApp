@@ -5,7 +5,7 @@ import {Field, reduxForm} from 'redux-form'
 
 function validate(values) {
   const errors ={}
-  const{ nom, type, description, process } = values
+  const{ nom, type, descriptions, process } = values
   if(!values.nom) errors.nom = "required"
   if(!values.type) errors.type = "required"
   if(!values.description) errors.description = "required"
@@ -16,7 +16,7 @@ function validate(values) {
 
 function renderInput({input, label, type, meta:{touched,error}}) {
   return <div>
-    <label>{label}{touched && ((error && <span className='error'>({error})</span>))}</label>
+    <label>{label}{touched && ((error && <span className='error'>{error}</span>))}</label>
     <div>
       <input {...input } placeholder={label} type={type}/>
     </div>
@@ -45,7 +45,7 @@ function SerReportForm(props) {
         type="submit"
         className="primary"
         disabled = {!valid || submitting}
-       onClick={() => props.history.push('/')} //index page ask about tout
+       onClick={() => props.history.push('/')} //index page ask about tout   withRouter
       >Save</button>
       <button
         type="button"
@@ -57,7 +57,8 @@ function SerReportForm(props) {
 
 const withForm = reduxForm({ form: 'serReport', validate})(SerReportForm)
 const withRedux = connect(state=>({
-  initialValues: state.serviceReport.ser,
-}))(withForm)
+initialValues: state.serviceReport.ser,
+}))
+(withForm)
 
-export default withRouter(reduxForm({form:'serReport', validate})(SerReportForm)) 
+export default withRouter(reduxForm({form:'serReport', validate})(serReportForm)) 

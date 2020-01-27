@@ -10,6 +10,4 @@ const serviceReportReducer = (state ={
         return state	
   }	  }
 
-
-
 export default serviceReportReducer
